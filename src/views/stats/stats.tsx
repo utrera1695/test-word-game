@@ -41,7 +41,7 @@ export const Stats = (): JSX.Element => {
 						<h4>Jugadas</h4>
 					</div>
 					<div className='dark:text-white text-center'>
-						<h2 className='font-semibold'>{localStorage.good_games}</h2>
+						<h2 className='font-semibold'>{localStorage.good_games || 0}</h2>
 						<h4>Victorias</h4>
 					</div>
 				</div>

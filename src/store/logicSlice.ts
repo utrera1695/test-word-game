@@ -105,13 +105,13 @@ export const logicSlice = createSlice({
 						'games',
 						localStorage.games === undefined
 							? '1'
-							: (parseInt(localStorage.games) + 1).toString(),
+							: (parseInt(localStorage.games || 0) + 1).toString(),
 					);
 					localStorage.setItem(
 						'good_games',
 						localStorage.good_games === undefined
 							? '1'
-							: (parseInt(localStorage.good_games) + 1).toString(),
+							: (parseInt(localStorage.good_games || 0) + 1).toString(),
 					);
 					localStorage.setItem(
 						'next_word',
@@ -130,11 +130,11 @@ export const logicSlice = createSlice({
 					localStorage.setItem('gameOver', '2');
 					localStorage.setItem(
 						'games',
-						(parseInt(localStorage.good_games) + 1).toString(),
+						(parseInt(localStorage.games || 0) + 1).toString(),
 					);
 					localStorage.setItem(
 						'next_word',
-						moment().add(10, 'second').toISOString(),
+						moment().add(5, 'minutes').toISOString(),
 					);
 					/* add to list of last words used */
 
