@@ -1,5 +1,5 @@
 # React + TypeScript + Vite
-live demo: [https://test-word-game-qu7fxo6w6-utrera1695s-projects.vercel.app/](https://test-word-game.vercel.app/)
+live demo: https://test-word-game.vercel.app/
 
 ## Requeriments
 - nodejs >= 18
