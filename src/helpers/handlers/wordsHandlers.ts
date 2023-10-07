@@ -1,5 +1,3 @@
-import { useAppSelector } from '../../store/hooks';
-
 export default class WordHandler {
 	private words: string[];
 	constructor(words: any = null) {
