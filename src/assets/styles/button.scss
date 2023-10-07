@@ -1,0 +1,11 @@
+button {
+	@apply text-white bg-[#66A060] font-semibold text-center h-[44px] w-[256px];
+	transition: ease all 0.1s;
+	&:hover {
+		opacity: 0.9;
+	}
+	&:active {
+		opacity: 0.7;
+		transform: scale(0.9);
+	}
+}
