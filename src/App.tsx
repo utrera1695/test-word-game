@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from './store/hooks';
 import { setSecretWord, setShowStats, setValidWords } from './store/logicSlice';
 import { Instructions } from './views/instructions/instructions';
 import { Stats } from './views/stats/stats';
+import words from '../src/assets/words.txt';
 import moment from 'moment';
 
 const App = (): JSX.Element => {
@@ -25,11 +26,8 @@ const App = (): JSX.Element => {
 		} else {
 			localStorage.removeItem('next_word');
 			/* get words of url */
-			fetch(
-				process.env.NODE_ENV === 'production'
-					? 'https://gitlab.com/d2945/words/-/raw/main/words.txt'
-					: '../src/assets/words.txt',
-			)
+			console.log(words);
+			fetch(words)
 				.then(async (response) => await response.text())
 				.then((response) => {
 					const wordHandler = new WordHandler(response);
