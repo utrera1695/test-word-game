@@ -25,7 +25,11 @@ const App = (): JSX.Element => {
 		} else {
 			localStorage.removeItem('next_word');
 			/* get words of url */
-			fetch('../src/assets/words.txt')
+			fetch(
+				process.env.NODE_ENV === 'production'
+					? 'https://gitlab.com/d2945/words/-/raw/main/words.txt'
+					: '../src/assets/words.txt',
+			)
 				.then(async (response) => await response.text())
 				.then((response) => {
 					const wordHandler = new WordHandler(response);
